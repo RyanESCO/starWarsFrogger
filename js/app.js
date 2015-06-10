@@ -55,7 +55,7 @@ Player.prototype.update = function(){
 	
 	if (this.y <= 20) {
         this.levelup();
-    } else if (this.y <= 220 & this.x >= 0) {
+    } else if (this.y <= 220 && this.x >= 0) {
         var heroes = this;
         allEnemies.forEach(function(enemy) {
             if (enemy.y == heroes.y) {
