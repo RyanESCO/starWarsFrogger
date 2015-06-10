@@ -6,14 +6,14 @@ var Enemy = function() {
 
     this.sprite = 'images/speeder.png';
     this.reset();
-	}
+	};
 
 Enemy.prototype.reset = function(){
 	var startPos = this.xRange[0];
     this.x = startPos;
     this.y = this.getRandomY();
     this.speed = this.getRandomSpeed();
-}
+};
 
 Enemy.prototype.update = function(dt) {
     var maxPos = this.xRange[1];
@@ -22,23 +22,23 @@ Enemy.prototype.update = function(dt) {
     if (this.x > maxPos) {
         this.reset();
     }
-}
+};
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 Enemy.prototype.getRandomY = function() {
     return this.yRange[Math.floor(Math.random() * this.yRange.length)];
-}
+};
 
 Enemy.prototype.getRandomSpeed = function() {
     var minSpeed = this.speedRange[0],
         maxSpeed = this.speedRange[1];
 
     return Math.floor(Math.random() * (maxSpeed - minSpeed)) + minSpeed;
-}
+};
 
 var Player = function(){
 	
@@ -47,9 +47,9 @@ var Player = function(){
     this.sprite = 'images/good-guys-0.png';
     this.reset();
 	this.level = 0;
-}
+};
 
-Player.prototype.update = function(dt){
+Player.prototype.update = function(){
 	
 	if (this.y <= 20) {
         this.levelup();
@@ -67,18 +67,18 @@ Player.prototype.update = function(dt){
         });
     }
 	
-}
+};
 
-Player.prototype.render = function(dt){
+Player.prototype.render = function(){
 	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 Player.prototype.reset = function(){
 	this.x = 200;
 	this.y = 380;
 	this.level = 0;
 	this.sprite = 'images/good-guys-' + this.level + '.png';
-}
+};
 
 Player.prototype.levelup = function(){
 	this.x = 200;
@@ -90,7 +90,7 @@ Player.prototype.levelup = function(){
 		alert("You Win!");
 		this.reset();
 	}
-}
+};
 
 Player.prototype.handleInput = function(key){
 	if (key === 'left') {
@@ -103,7 +103,7 @@ Player.prototype.handleInput = function(key){
         this.y += (this.y + 80 > this.yRange[1]) ? 0 : 80;
     }
 	
-}
+};
 
 var enemy1 = new Enemy();
 var enemy2 = new Enemy();
