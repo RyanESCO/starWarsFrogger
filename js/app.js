@@ -1,3 +1,5 @@
+//NOTE FORE REVIEWER:  I initially was totally lost and got the basic idea for methods and structure for app.js from udacity forums, if elements of the code seem familiar 
+
 // Enemies our player must avoid
 var Enemy = function() {
     this.xRange = [-150, 600];
@@ -59,8 +61,6 @@ Player.prototype.update = function(){
             if (enemy.y == heroes.y) {
                 if (enemy.x >= heroes.x - 30 && enemy.x <= heroes.x + 30) {
 					//collision
-                    //heroes.fails++;
-                    //$("#fails").append("Fails: " + charBoy.fails);
                     heroes.reset();
                 }
             }
