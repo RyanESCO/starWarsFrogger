@@ -1,3 +1,5 @@
+"use strict";
+
 //Enemy object 
 var Enemy = function() {
     this.xRange = [-150, 600];
