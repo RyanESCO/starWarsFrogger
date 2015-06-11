@@ -1,37 +1,10 @@
-frontend-nanodegree-arcade-game
-===============================
+Star Wars Frogger!
 
-Students should use this rubric: https://www.udacity.com/course/viewer#!/c-ud015/l-3072058665/m-3072588797
+This is a game I created for Lecture 3 of the Udacity Nanodegree for Front End Web Development.  Udacity provided some assets and the basic game engine and structure and left a bunch of loose ends to tie up as part of the class.  
 
-for self-checking their submission.
+I filled in the holes of the code and tried to add a little personalization by changing the characters and adding a level-up scheme.  I do collision detection with the player and the speeders, checking if they occupy the same relative space on the canvas.  I do the same for the players and the gems.  If you reach a gem, you get a new character and start back at the lower part of the screen.  
 
-(copy pasted here)
-Video of Game:
-https://www.youtube.com/watch?v=p2JhGrrwLuQ
+The goal of the game is to navigate your Star Wars character to the gems on the screen.  Watch out for storm troopers on speeders!  Every time you grab a gem you level up to a new star wars character. Use the arrow keys.
 
-Project Overview
 
-You will be provided visual assets and a game loop engine; using these tools you must add a number of entities to the game including the player characters and enemies to recreate the classic arcade game Frogger.
-
-Why this Project?
-
-Games have a lot of objects, and those objects do a lot of different things; but sometimes those objects do some very similar things as well. This creates a great opportunity to practice object-oriented programming, an important programming paradigm that influences your application architecture and provides performance optimizations.
-
-What will I Learn?
-
-You will learn JavaScript’s object oriented programming features to write eloquently designed classes capable of creating countless instances of similarly functioning objects. You will discover a variety of ways that inheritance and delegation can be used to create well-architected and performant applications.
-
-How Does this Help My Career?
-
-JavaScript enables the development of complex applications on the web.
-JavaScript runs on normal web browsers, which makes it one of the most accessible and flexible programming languages.
-Complex applications must be “broken down” into simpler entities that manage their own properties and functionality
-
-How do I Complete this Project?
-
-Download the art assets and provided game engine.
-Review the code and comments provided in app.js
-Identify the various classes you will need to write.
-Identify and code the properties each class must have to accomplish its tasks.
-Write the functions that provide functionality to each of your class instances.
 

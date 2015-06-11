@@ -80,15 +80,37 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+        checkCollisions();
     }
 
+	function checkCollisions(){
+		
+		//check for enemy collisions
+		allEnemies.forEach(function(enemy) {
+            if (enemy.y == player.y) {
+                if (enemy.x >= player.x - 30 && enemy.x <= player.x + 30) {
+					//collision
+                    player.reset();
+                }
+            }
+        });
+		
+		if(gem.y == player.y){
+			   if (gem.x >= player.x - 5 && gem.x <= player.x + 5) {
+					
+					player.levelup();
+                    gem.reset();
+                }
+		}
+		
+	}
+	
     /* This is called by the update function  and loops through all of the
      * objects within your allEnemies array as defined in app.js and calls
      * their update() methods. It will then call the update function for your
      * player object. These update methods should focus purely on updating
      * the data/properties related to  the object. Do your drawing in your
-     * render methods.
+     * render methods.	
      */
     function updateEntities(dt) {
         allEnemies.forEach(function(enemy) {
@@ -153,6 +175,7 @@ var Engine = (function(global) {
         });
 
         player.render();
+		gem.render();
     }
 
     /* This function does nothing but it could have been a good place to
@@ -171,6 +194,7 @@ var Engine = (function(global) {
         'images/stone-block.png',
         'images/water-block.png',
         'images/grass-block.png',
+		'images/Gem Green.png',
         'images/enemy-bug.png',
 		 'images/tesla.png',
 		 'images/speeder.png',
